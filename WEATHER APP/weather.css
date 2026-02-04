@@ -1,33 +1,135 @@
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, sans-serif;
 }
 
 body {
-    margin: 0px;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
 }
+
+/* Header */
 header {
-  height: 100px;
-  background-color: slategray;
+  padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-main {
-  height: calc(100vh - 100px);
-  background-color: darkslategray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.weather-container{
-    display: flex;
-    gap: 1rem;
 }
 
 .input-container {
   display: flex;
-  gap: 1rem;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  padding: 10px 14px;
+  border-radius: 30px;
+}
+
+.input-container input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 220px;
+  font-size: 16px;
+}
+
+.input-container input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#search {
+  background: #4facfe;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+#search:hover {
+  background: #00c6fb;
+}
+
+/* Center Weather Box */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Weather Card */
+.weather-container {
+  width: 340px;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Temperature */
+.temperature {
+  font-size: 64px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Location + Date */
+.location-date {
+  margin-bottom: 20px;
+}
+
+.location {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.location-date span {
+  font-size: 14px;
+  opacity: 0.85;
+  margin: 0 4px;
+}
+
+/* Weather Status */
+.weather-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.weather-status img {
+  width: 64px;
+  height: 64px;
+}
+
+.condition {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+  .weather-container {
+    width: 100%;
+  }
+
+  .temperature {
+    font-size: 54px;
+  }
 }
